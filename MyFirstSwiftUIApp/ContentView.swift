@@ -7,10 +7,36 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            MapView()
+                .edgesIgnoringSafeArea(.top)
+                .frame(height: 300)
+            CircleImage()
+                .offset(y: -130)
+                .padding(.bottom, -130)
+            
+            VStack(alignment: .leading) {
+                Text("Turtle Rock")
+                    .font(.largeTitle)
+                    .fontWeight(.thin)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(0)
+                    .padding(0.0)
+                HStack {
+                    Text("JoshuaTree National Park")
+                        .font(.subheadline)
+                    Spacer()
+                    Text("California")
+                        .font(.subheadline)
+                }
+            }
+            .padding()
+            Spacer()
+        }
     }
 }
 
